@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/output.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/output.css" />
     <script defer src="src/bundle.js"></script>
+    <style>
+      body{
+        font-family: 'Poppins', sans-serif;
+         /* background-color: #222; */
+      }
+    </style>
     <title>Quiz App</title>
-</head>
-<body>
-    <button id="btn">clck kar be</button>
-</body>
+  </head>
+  <body">
+    <div id="banner" class="border-2">Quiz App</div>
+
+    <!-- Question-Div -->
+    <div class="flex justify-center items-center mt-16 sm:mt-24 ">
+    <div id="Questions-Div" class="border-2 flex flex-col sm:w-1/2 w-11/12 h-96">
+
+        <!-- header-questionDiv -->
+        <div class="text-sm flex flex-row justify-around border-b-2">
+          <span>Category: Linux</span>
+          <span class="border-2 px-2">Time Left: 15</span>
+        </div>
+
+        <!-- Question-->
+        <div id="question" class="text-lg sm:text-xl font-semibold mt-4 sm:mt-4 pl-3 sm:pl-4">Which are the three looping is provided by shell</div>
+
+        <!-- Options -->
+        <button id="option-1" class="text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-6 font-medium px-4">while <i class="fa-regular fa-circle-check p-1"></i></button>
+        <button id="option-2" class="text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4">import<i class="fa-regular fa-circle-xmark p-1"></i></button>
+        <button id="option-3" class="text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4">/etc/fstab and autofs <i class="fa-regular fa-circle-xmark p-1"></i></button>
+        <button id="option-4" class="text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4">foreach <i class="fa-regular fa-circle-xmark p-1"></i></button>
+
+        <!-- footer-QuestionDiv -->
+        <div id="nextbtn-questonsLeft-DIV" class="flex justify-between mt-8 px-2 " >
+        <p><span>2</span>of<span>5</span>Questions</p>
+        <button id="btn" class="border-2 px-4">Next Que</button>
+      </div>
+    </div>
+  </div>
+  </body>
 </html>
