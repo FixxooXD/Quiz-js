@@ -7,11 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="src/output.css" />
-    <script defer src="src/bundle.js"></script>
+    <script defer src="./src/index.js"></script>
     <style>
       body{
         font-family: 'Poppins', sans-serif;
          /* background-color: #222; */
+      }
+      #check{
+         color: green;
+      }
+      #cross{
+        color: red;
       }
     </style>
     <title>Quiz App</title>
@@ -25,25 +31,27 @@
 
         <!-- headers-questionDiv -->
         <div class="text-sm flex flex-row justify-between sm:justify-around items-center border-b-2 h-12">
-          <div class="sm:mx-1 ml-4  text-base sm:text-xl">Category: <span id="category">Linux</span></div>
+          <div class="sm:mx-1 ml-4  text-base sm:text-xl">Category: <span id="category"></span></div>
           <div class="border-2 h-fit px-1 sm:px-3   sm:py-0 py-1 mr-4 sm:text-lg">Time Left: 15</div>
         </div>
 
         <!-- Question-->
-        <div id="question" class="text-lg sm:text-xl font-semibold mt-2 sm:mt-4 pl-3 sm:pl-4">Which are the three looping is provided by shell</div>
+        <div id="question" class="text-lg sm:text-xl font-semibold mt-2 sm:mt-4 pl-3 sm:pl-4"></div>
 
         <!-- Options -->
-        <button id="option" class="option-0 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-4 font-medium px-4 py-1"><span id="op1">while</span></button>
-        <button id="option" class="option-2 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1">import</button>
-        <button id="option" class="option-3 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1">/etc/fstab and autofs </button>
-        <button id="option" class="option-4 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1">foreach</button>
+        <button id="option" onclick="doSomething()" class="option-0 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-4 font-medium px-4 py-1"></button>
+        <button id="option" onclick="doSomething()" class="option-2 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
+        <button id="option" onclick="doSomething()" class="option-3 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
+        <button id="option" onclick="doSomething()" class="option-4 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
 
         <!-- footer-QuestionDiv -->
         <div id="nextbtn-questonsLeft-DIV" class="flex justify-between mt-5 px-2 pb-5" >
-        <p class="text-base sm:ml-4"><span>2</span>of<span>5</span>Questions</p>
+        <p class="text-base sm:ml-4"><span id="questionCount">0</span> Questions</p>
         <button id="btn" class="border-2 px-5 h-8 sm:h-10 sm:mr-4 sm:text-lg">Next Que</button>
       </div>
     </div>
   </div>
+  <script>
+  </script>
   </body>
 </html>
