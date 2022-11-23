@@ -29,10 +29,19 @@
     <div class="flex justify-center items-center mt-16 sm:mt-24">
     <div id="Questions-Div" class="border-2 flex flex-col sm:w-1/2 w-full  mx-3 w-fit ">
 
+      <div id="rules" class="absolute border-2 flex flex-col justify-center items-center sm:w-1/2 h-96  sm:h-1/2 bg-stone-600">
+        <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+            <button id="startBtn" class="border-2 w-32">start</button>
+      </div>
+
         <!-- headers-questionDiv -->
         <div class="text-sm flex flex-row justify-between sm:justify-around items-center border-b-2 h-12">
           <div class="sm:mx-1 ml-4  text-base sm:text-xl">Category: <span id="category"></span></div>
-          <div class="border-2 h-fit px-1 sm:px-3   sm:py-0 py-1 mr-4 sm:text-lg">Time Left: 15</div>
+          <div class="border-2 h-fit px-1 sm:px-3   sm:py-0 py-1 mr-4 sm:text-lg">Time Left: <span id="timeleft">15</span></div>
         </div>
 
         <!-- Question-->

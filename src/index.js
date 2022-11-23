@@ -9,27 +9,56 @@ const option4 = document.querySelector(".option-4");
 const category = document.getElementById("category");
 const op1 = document.getElementById("op1");
 const QuesCount = document.getElementById("questionCount");
+const startBtn = document.getElementById('startBtn');
+const rulesPopup = document.querySelector('#rules');
+const timer = document.getElementById('timeleft');
 let correctAns;
 let firstOption;
 let secondOption;
 let thirdOption;
 let fourtOption;
-let questionsCounter = 0;
-// console.log(optionBtn);
-// const config = require("../secret.json");
+let questionsCounter = -1;
 
-// const MY_KEY = config.API_KEY;
-/* <i class="fa-regular fa-circle-check p-1"></i> */
-/* <i class="fa-regular fa-circle-xmark p-1"></i> */
+// function startTimer(time){
+//   counter = setInterval(timer, 1000);
+//   function timer(){
+//     timer.textContent = time--;
+//     if(time < 9){ //if timer is less than 9
+//       let addZero = timeCount.textContent;
+//       timer.innerHTML = "0" + addZero; //add a 0 before time value
+//      }
+//      if(time < 0){ //if timer is less than 0
+//       clearInterval(counter); //clear c
+//   }
+// }
+// }
+
+  var seconds = 15;
+var refreshIntervalId = setInterval(stopwatch, 1000);
+function stopwatch() {
+  timer.innerHTML = seconds--;
+  if (seconds < 0) {
+    doSomething();
+    clearInterval(refreshIntervalId)
+  }
+}
+
+
+startBtn.addEventListener('click', ()=>{
+  rulesPopup.style.display= 'none'
+  getquiz()
+})
+
+
 
 // whenever the file get loaded it will automatically run the getquiz()
-document.addEventListener("DOMContentLoaded", getquiz);
+// document.addEventListener("DOMContentLoaded", getquiz);
 
 Btn.addEventListener("click", getquiz);
 
 async function getquiz() {
   const fetchData = await fetch(
-    `https://quizapi.io/api/v1/questions?apiKey=${'BEXiGL47aq49e6JIjlo8xxSpYDDqOUEQ89QmwBlJ'}`
+    `https://quizapi.io/api/v1/questions?apiKey=BEXiGL47aq49e6JIjlo8xxSpYDDqOUEQ89QmwBlJ`
   );
 
   // questionsCounter  = questionsCounter + 1;
@@ -98,6 +127,13 @@ async function getquiz() {
   // counting the  Number questions and adding +1 on every click
   questionsCounter += 1;
   QuesCount.innerHTML = questionsCounter;
+
+  startTimer(15);
+
+  // refreshIntervalId = setInterval(stopwatch, 1000);
+
+
+  // refreshIntervalId = setInterval(stopwatch, 1000);
 }
 // most Important Part Because i had created "optionBtn" as a QuerySelectorAll I have to Iterate individulally
 // to each optionsBtns so i had created a forEach  loop to itereation over each options
@@ -120,6 +156,7 @@ optionBtn.forEach((options) => {
 
 //  Its an onclick function added the the  HtmlFile it will disable all the option Btn if any of the button is clicked
 const doSomething = () =>{
+  clearInterval(refreshIntervalId)
   // (A) DISABLE THE BUTTON
   option1.disabled = true;
   option2.disabled = true;
