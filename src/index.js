@@ -59,19 +59,19 @@ const doSomething = () =>{
   // it will turn of bordercolor of the correct option wheather it was  clicked or not so the if the user click the wrong option
   // it show both  the worong as will as the correct option
   if (option1.innerHTML == correctAns) {
-    option1.style.borderColor = "green";
+    option1.style.borderColor = "#23903c";
     //   option1.innerHTML = `${firstOption}  <i id="check" class="fa-regular fa-circle-check p-1"></i>`;
   }
   if (option2.innerHTML == correctAns) {
-    option2.style.borderColor = "green";
+    option2.style.borderColor = "#23903c";
     // option2.innerHTML += `${secondOption}  <i id="check" class="fa-regular fa-circle-check p-1"></i>`;
   }
   if (option3.innerHTML == correctAns) {
-    option3.style.borderColor = "green";
+    option3.style.borderColor = "#23903c";
     //       option3.innerHTML = `${thirdOption}  <i id="check" class="fa-regular fa-circle-check p-1"></i>`;
   }
   if (option4.innerHTML == correctAns) {
-    option4.style.borderColor = "green";
+    option4.style.borderColor = "#23903c";
     //         option4.innerHTML = `${fourtOption}  <i id="check" class="fa-regular fa-circle-check p-1"></i>`;
   }
 }
