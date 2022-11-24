@@ -36,7 +36,7 @@
         border-color: #ffdd59;
       }
 
-     #option{
+     #option,#timeleft{
       transition: all 0.3s ease;
      }
      #Questions-Div{
@@ -49,16 +49,18 @@
   <body>
     <div id="banner" class=" text-4xl pl-5 py-2 shadow-lg text-white"><a href="./index.html">Quiz App</a></div>
 
+    <div class="mt-4 pl-4 text-base sm:text-lg">Some of the categories that we have include are:-  <span class="font-bold">Linux, DevOps, Networking, Programming (PHP, JS, Pythong and etc.), Cloud, Docker, Kubernetes, And lots more</span></div>
+
     <!-- Question-Div -->
-    <div class="flex justify-center items-center mt-16 sm:mt-24">
+    <div class="flex justify-center items-center mt-10 sm:mt-24">
     <div id="Questions-Div" class=" flex flex-col sm:w-1/2 w-full  mx-3 w-fit shadow-xl rounded-lg ">
 
       <!-- Rules Section -->
-      <div id="rules" class="absolute insert-0  mx-4 sm:mx-0 flex flex-col justify-center items-center sm:w-1/2 h-96  sm:h-1/2 bg-stone-600 px-4 text-white">
+      <div id="rules" class="absolute insert-0  mx-4 sm:mx-0 flex flex-col justify-center items-center sm:w-1/2 h-96  sm:h-1/2 bg-stone-600 px-4 text-white sm:text-xl">
         <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
             <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">4. You can exit from the Quiz while you're playing.</div>
+            <div class="info sm:mr-4">3. You can't select any option once time goes off.</div>
+            <div class="info sm:mr-4">4. You can exit from the Quiz while you're playing.</div>
             <button id="startBtn" class=" w-32 mt-5 py-1 text">start</button>
       </div>
 
