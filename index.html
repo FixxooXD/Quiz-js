@@ -13,8 +13,12 @@
         font-family: 'Poppins', sans-serif;
          background-color:#ffdd59;
       }
-      #timer-div{
+      #timer-div,#btn{
         background-color:#ffdd59;
+      }
+
+      #startBtn{
+       background-color:#808e9b;
       }
       #check{
          color: green;
@@ -26,7 +30,8 @@
           #rules{
             right: 0px;
        }
-     }
+      }
+
      #option{
       transition: all 0.3s ease;
      }
@@ -38,25 +43,25 @@
     <title>Quiz App</title>
   </head>
   <body>
-    <div id="banner" class="border-2 text-3xl pl-4 py-1"><a href="./index.html">Quiz App</a></div>
+    <div id="banner" class=" text-4xl pl-5 py-2 shadow-lg text-white"><a href="./index.html">Quiz App</a></div>
 
     <!-- Question-Div -->
     <div class="flex justify-center items-center mt-16 sm:mt-24">
-    <div id="Questions-Div" class=" flex flex-col sm:w-1/2 w-full  mx-3 w-fit shadow-xl ">
+    <div id="Questions-Div" class=" flex flex-col sm:w-1/2 w-full  mx-3 w-fit shadow-xl rounded-lg ">
 
       <!-- Rules Section -->
-      <div id="rules" class="absolute insert-0  mx-4 sm:mx-0 flex flex-col justify-center items-center sm:w-1/2 h-96  sm:h-1/2 bg-stone-600 px-4">
+      <div id="rules" class="absolute insert-0  mx-4 sm:mx-0 flex flex-col justify-center items-center sm:w-1/2 h-96  sm:h-1/2 bg-stone-600 px-4 text-white">
         <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
             <div class="info">2. Once you select your answer, it can't be undone.</div>
             <div class="info">3. You can't select any option once time goes off.</div>
             <div class="info">4. You can exit from the Quiz while you're playing.</div>
-            <button id="startBtn" class="border-2 w-32">start</button>
+            <button id="startBtn" class=" w-32 mt-5 py-1 text-xl">start</button>
       </div>
 
         <!-- headers-questionDiv -->
         <div class="text-sm flex flex-row justify-between sm:justify-around items-center border-b-2 h-12">
           <div class="sm:mx-1 ml-4  text-base sm:text-xl">Category: <span id="category"></span></div>
-          <div id="timer-div" class=" h-fit px-1 sm:px-3 sm:py-0 py-1 mr-4 sm:text-lg text-white ">Time Left: <span class="font-bold px-2" id="timeleft">15</span></div>
+          <div id="timer-div" class=" h-fit px-1 sm:px-3 sm:py-0 py-1 mr-4 sm:text-lg text-white rounded">Time Left:<span class="font-bold px-2" id="timeleft">15</span></div>
         </div>
 
         <!-- Question-->
@@ -71,7 +76,7 @@
         <!-- footer-QuestionDiv -->
         <div id="nextbtn-questonsLeft-DIV" class="flex justify-between mt-5 px-2 pb-5" >
         <p class="text-base sm:ml-4"><span id="questionCount">0</span> Questions</p>
-        <button id="btn" class="border-2 px-5 h-8 sm:h-10 sm:mr-4 sm:text-lg">Next Que</button>
+        <button id="btn" class="px-5 h-8 sm:h-10 sm:mr-4 sm:text-lg text-white rounded">Next Que</button>
       </div>
     </div>
   </div>
