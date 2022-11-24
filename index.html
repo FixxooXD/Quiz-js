@@ -4,89 +4,158 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="src/output.css" />
     <script defer src="./src/index.js"></script>
     <style>
-      body{
-        font-family: 'Poppins', sans-serif;
-         background-color:#ffdd59;
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #ffdd59;
       }
-      #timer-div,#btn{
-        background-color:#ffdd59;
+      #timer-div,
+      #btn {
+        background-color: #ffdd59;
       }
 
-      #startBtn{
-       background-color:#808e9b;
-       /* background-color: #ffa801; */
+      #startBtn {
+        background-color: #808e9b;
+        /* background-color: #ffa801; */
       }
-      #check{
-         color: green;
+      #check {
+        color: green;
       }
-      #cross{
+      #cross {
         color: red;
       }
-        @media screen and (max-width: 600px) {
-          #rules{
-            right: 0px;
-       }
+      @media screen and (max-width: 600px) {
+        #rules {
+          right: 0px;
+        }
       }
-      .questiondiv,#nextbtn-questonsLeft-DIV{
+      .questiondiv,
+      #nextbtn-questonsLeft-DIV {
         border-color: #ffdd59;
       }
 
-     #option,#timeleft{
-      transition: all 0.3s ease;
-     }
-     #Questions-Div{
-  background-color:white ;
-     }
-
+      #option,
+      #timeleft {
+        transition: all 0.3s ease;
+      }
+      #Questions-Div {
+        background-color: white;
+      }
     </style>
     <title>Quiz App</title>
   </head>
   <body>
-    <div id="banner" class=" text-4xl pl-5 py-2 shadow-lg text-white"><a href="./index.html">Quiz App</a></div>
+    <div id="banner" class="text-4xl pl-5 py-2 shadow-lg text-white">
+      <a href="./index.html">Quiz App</a>
+    </div>
 
-    <div class="mt-4 pl-4 text-base sm:text-lg">Some of the categories that we have include are:-  <span class="font-bold">Linux, DevOps, Networking, Programming (PHP, JS, Pythong and etc.), Cloud, Docker, Kubernetes, And lots more</span></div>
+    <div class="mt-4 pl-4 text-base sm:text-lg">
+      Some of the categories that we have include are:-
+      <span class="font-bold"
+        >Linux, DevOps, Networking, Programming (PHP, JS, Pythong and etc.),
+        Cloud, Docker, Kubernetes, And lots more</span
+      >
+    </div>
 
     <!-- Question-Div -->
     <div class="flex justify-center items-center mt-10 sm:mt-24">
-    <div id="Questions-Div" class=" flex flex-col sm:w-1/2 w-full  mx-3 w-fit shadow-xl rounded-lg ">
-
-      <!-- Rules Section -->
-      <div id="rules" class="absolute insert-0  mx-4 sm:mx-0 flex flex-col justify-center items-center sm:w-1/2 h-96  sm:h-1/2 bg-stone-600 px-4 text-white sm:text-xl">
-        <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-            <div class="info">2. Once you select your answer, it can't be undone.</div>
-            <div class="info sm:mr-4">3. You can't select any option once time goes off.</div>
-            <div class="info sm:mr-4">4. You can exit from the Quiz while you're playing.</div>
-            <button id="startBtn" class=" w-32 mt-5 py-1 text">start</button>
-      </div>
+      <div
+        id="Questions-Div"
+        class="flex flex-col sm:w-1/2 w-full mx-3 w-fit shadow-xl rounded-lg"
+      >
+        <!-- Rules Section -->
+        <div
+          id="rules"
+          class="absolute insert-0 mx-4 sm:mx-0 flex flex-col justify-center items-center sm:w-1/2 h-96 sm:h-1/2 bg-stone-600 px-4 text-white sm:text-xl"
+        >
+          <div class="info">
+            1. You will have only <span>15 seconds</span> per each question.
+          </div>
+          <div class="info">
+            2. Once you select your answer, it can't be undone.
+          </div>
+          <div class="info sm:mr-4">
+            3. You can't select any option once time goes off.
+          </div>
+          <div class="info sm:mr-4">
+            4. You can exit from the Quiz while you're playing.
+          </div>
+          <button id="startBtn" class="w-32 mt-5 py-1 text">start</button>
+        </div>
 
         <!-- headers-questionDiv -->
-        <div class="questiondiv text-sm flex flex-row justify-between sm:justify-around items-center border-b-2  h-12">
-          <div class="sm:mx-1 ml-4  text-base sm:text-xl">Category: <span id="category"></span></div>
-          <div id="timer-div" class=" h-fit px-1 sm:px-3 sm:py-0 py-1 mr-4 sm:text-lg text-white rounded">Time Left:<span class="font-bold px-2" id="timeleft">15</span></div>
+        <div
+          class="questiondiv text-sm flex flex-row justify-between sm:justify-around items-center border-b-2 h-12"
+        >
+          <div class="sm:mx-1 ml-4 text-base sm:text-xl">
+            Category: <span id="category"></span>
+          </div>
+          <div
+            id="timer-div"
+            class="h-fit px-1 sm:px-3 sm:py-0 py-1 mr-4 sm:text-lg text-white rounded"
+          >
+            Time Left:<span class="font-bold px-2" id="timeleft">15</span>
+          </div>
         </div>
 
         <!-- Question-->
-        <div id="question" class="text-lg sm:text-xl font-semibold mt-2 sm:mt-4 pl-3 sm:pl-4"></div>
+        <div
+          id="question"
+          class="text-lg sm:text-xl font-semibold mt-2 sm:mt-4 pl-3 sm:pl-4"
+        ></div>
 
         <!-- Options -->
-        <button id="option" onclick="doSomething()" class="option-0 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-4 font-medium px-4 py-1"></button>
-        <button id="option" onclick="doSomething()" class="option-2 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
-        <button id="option" onclick="doSomething()" class="option-3 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
-        <button id="option" onclick="doSomething()" class="option-4 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
+        <button
+          id="option"
+          onclick="doSomething()"
+          class="option-0 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-4 font-medium px-4 py-1"
+        ></button>
+        <button
+          id="option"
+          onclick="doSomething()"
+          class="option-2 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"
+        ></button>
+        <button
+          id="option"
+          onclick="doSomething()"
+          class="option-3 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"
+        ></button>
+        <button
+          id="option"
+          onclick="doSomething()"
+          class="option-4 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"
+        ></button>
 
         <!-- footer-QuestionDiv -->
-        <div id="nextbtn-questonsLeft-DIV" class="border-t-2 flex justify-between mt-5 px-2 pb-5 pt-2" >
-        <p class="text-base sm:ml-4"><span id="questionCount">0</span> Questions</p>
-        <button id="btn" class="px-5 h-8 sm:h-10 sm:mr-4 sm:text-lg text-white rounded">Next Que</button>
+        <div
+          id="nextbtn-questonsLeft-DIV"
+          class="border-t-2 flex justify-between mt-5 px-2 pb-5 pt-2"
+        >
+          <p class="text-base sm:ml-4">
+            <span id="questionCount">0</span> Questions
+          </p>
+          <button
+            id="btn"
+            class="px-5 h-8 sm:h-10 sm:mr-4 sm:text-lg text-white rounded"
+          >
+            Next Que
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-  </script>
+    <script></script>
   </body>
 </html>

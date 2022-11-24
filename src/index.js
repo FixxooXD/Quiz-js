@@ -9,9 +9,9 @@ const option4 = document.querySelector(".option-4");
 const category = document.getElementById("category");
 const op1 = document.getElementById("op1");
 const QuesCount = document.getElementById("questionCount");
-const startBtn = document.getElementById('startBtn');
-const rulesPopup = document.querySelector('#rules');
-const timerLeft = document.getElementById('timeleft');
+const startBtn = document.getElementById("startBtn");
+const rulesPopup = document.querySelector("#rules");
+const timerLeft = document.getElementById("timeleft");
 let correctAns;
 let firstOption;
 let secondOption;
@@ -21,33 +21,35 @@ let questionsCounter = 0;
 let counter;
 
 // This Flag will tell that the user didn't select any option and he clicked the nextQuestion button if it is false
-let optionsNotClickedFlag ;
+let optionsNotClickedFlag;
 
-function startTimer(time){
+function startTimer(time) {
   optionsNotClickedFlag = false;
   counter = setInterval(timer, 1000);
-  function timer(){
+  function timer() {
     timerLeft.innerHTML = time;
-    console.log(time)
-    if(time <= 9){ //if timer is less than 9
+    console.log(time);
+    if (time <= 9) {
+      //if timer is less than 9
       timerLeft.innerHTML = "0" + time; //add a 0 before time value
-     }
-     time--;
-     if(time < 0){ //if timer is less than 0
+    }
+    time--;
+    if (time < 0) {
+      //if timer is less than 0
       clearInterval(counter); //TO Stop Counter
       doSomething();
+    }
   }
 }
-}
 
-startBtn.addEventListener('click', ()=>{
-  rulesPopup.style.display= 'none'
-  getquiz()
+startBtn.addEventListener("click", () => {
+  rulesPopup.style.display = "none";
+  getquiz();
   optionsNotClickedFlag = false;
-})
+});
 
 //  Its an onclick function added the the  HtmlFile it will disable all the option Btn if any of the button is clicked
-const doSomething = () =>{
+const doSomething = () => {
   clearInterval(counter);
   optionsNotClickedFlag = true;
   option1.disabled = true;
@@ -74,7 +76,7 @@ const doSomething = () =>{
     option4.style.borderColor = "#23903c";
     //         option4.innerHTML = `${fourtOption}  <i id="check" class="fa-regular fa-circle-check p-1"></i>`;
   }
-}
+};
 
 // Calling getquiz() Onlcik ON the NextQue Btn;
 NextQueBtn.addEventListener("click", getquiz);
@@ -153,17 +155,15 @@ async function getquiz() {
 
   // doSomething()
   // A Option is clicked
-  if(optionsNotClickedFlag == true)
-  startTimer(15); //calling startTimer function
- else{
-  // UseR Didn't select anyof the option
-  // this will stop the counter at the moment when the nextQuestion  is clicked
-  clearInterval(counter);
-  // At the same Point it will Restart the counter
-  startTimer(15);
- }
-
-
+  if (optionsNotClickedFlag == true)
+    startTimer(15); //calling startTimer function
+  else {
+    // UseR Didn't select anyof the option
+    // this will stop the counter at the moment when the nextQuestion  is clicked
+    clearInterval(counter);
+    // At the same Point it will Restart the counter
+    startTimer(15);
+  }
 }
 // most Important Part Because i had created "optionBtn" as a QuerySelectorAll I have to Iterate individulally
 // to each optionsBtns so i had created a forEach  loop to itereation over each options
@@ -176,8 +176,7 @@ optionBtn.forEach((options) => {
       options.innerHTML +=
         '<i id="check" class="fa-regular fa-circle-check p-1"></i>';
       options.style.borderColor = "green";
-    }
-    else{
+    } else {
       options.innerHTML += `<i id="cross" class="fa-regular fa-circle-xmark p-1 text-red-600"></i>`;
       options.style.borderColor = "red";
     }
