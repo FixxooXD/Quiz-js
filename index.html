@@ -18,8 +18,8 @@
       }
 
       #startBtn{
-       /* background-color:#808e9b; */
-       background-color: #ffa801;
+       background-color:#808e9b;
+       /* background-color: #ffa801; */
       }
       #check{
          color: green;
@@ -31,6 +31,9 @@
           #rules{
             right: 0px;
        }
+      }
+      .questiondiv,#nextbtn-questonsLeft-DIV{
+        border-color: #ffdd59;
       }
 
      #option{
@@ -60,7 +63,7 @@
       </div>
 
         <!-- headers-questionDiv -->
-        <div class="text-sm flex flex-row justify-between sm:justify-around items-center border-b-2 h-12">
+        <div class="questiondiv text-sm flex flex-row justify-between sm:justify-around items-center border-b-2  h-12">
           <div class="sm:mx-1 ml-4  text-base sm:text-xl">Category: <span id="category"></span></div>
           <div id="timer-div" class=" h-fit px-1 sm:px-3 sm:py-0 py-1 mr-4 sm:text-lg text-white rounded">Time Left:<span class="font-bold px-2" id="timeleft">15</span></div>
         </div>
@@ -75,7 +78,7 @@
         <button id="option" onclick="doSomething()" class="option-4 text-base sm:text-xl border-2 mx-3 sm:mx-6 flex justify-between mt-3 font-medium px-4 py-1"></button>
 
         <!-- footer-QuestionDiv -->
-        <div id="nextbtn-questonsLeft-DIV" class="flex justify-between mt-5 px-2 pb-5" >
+        <div id="nextbtn-questonsLeft-DIV" class="border-t-2 flex justify-between mt-5 px-2 pb-5 pt-2" >
         <p class="text-base sm:ml-4"><span id="questionCount">0</span> Questions</p>
         <button id="btn" class="px-5 h-8 sm:h-10 sm:mr-4 sm:text-lg text-white rounded">Next Que</button>
       </div>
